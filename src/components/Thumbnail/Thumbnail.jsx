@@ -9,7 +9,7 @@ function Thumbnail(props) {
     return (
       <Col className="thumbnailImage">
         <Link to={{
-          pathname: '/image/'+image.id,
+          pathname: '/photo-browser/image/'+image.id,
           state: {
             image: image
           }

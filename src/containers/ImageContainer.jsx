@@ -50,7 +50,7 @@ class ImageContainer extends Component {
     return (
       <Container >
         <Breadcrumb>
-          <Breadcrumb.Item href="/">Images</Breadcrumb.Item>
+          <Breadcrumb.Item href="/photo-browser">Images</Breadcrumb.Item>
           <Breadcrumb.Item active>Single image</Breadcrumb.Item>
         </Breadcrumb>
 

@@ -16,23 +16,23 @@ function Image(props) {
         <Form>
           <Form.Group controlId="albumId">
             <Form.Label>Album ID:</Form.Label>
-            <Form.Control type="text" readOnly value={image.albumId} />
+            <Form.Control type="text" readOnly defaultValue={image.albumId} />
           </Form.Group>
           <Form.Group controlId="imageId">
             <Form.Label>Image ID:</Form.Label>
-            <Form.Control type="text" readOnly value={image.id} />
+            <Form.Control type="text" readOnly defaultValue={image.id} />
           </Form.Group>
           <Form.Group controlId="imageTitle">
             <Form.Label>Title:</Form.Label>
-            <Form.Control type="text" readOnly value={image.title} />
+            <Form.Control type="text" readOnly defaultValue={image.title} />
           </Form.Group>
           <Form.Group controlId="imageUrl">
             <Form.Label>URL:</Form.Label>
-            <Form.Control type="text" readOnly value={image.url} />
+            <Form.Control type="text" readOnly defaultValue={image.url} />
           </Form.Group>
           <Form.Group controlId="imageThumbnailUrl">
             <Form.Label>Thumbnail URL:</Form.Label>
-            <Form.Control type="text" readOnly value={image.thumbnailUrl} />
+            <Form.Control type="text" readOnly defaultValue={image.thumbnailUrl} />
           </Form.Group>
         </Form>
       </Col>

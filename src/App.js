@@ -2,7 +2,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import './App.css';
@@ -18,10 +19,11 @@ function App() {
         <h1>Photo Browser</h1>
       </header>
       <Switch>
-        <Route path="/image/:id" component={ImageContainer} />
-        <Route path="/">
+        <Route path="/photo-browser/image/:id" component={ImageContainer} />
+        <Route path="/photo-browser">
           <ImagesContainer />
         </Route>
+        <Redirect from="/" to="/photo-browser" />
       </Switch>
     </Router>
   );
