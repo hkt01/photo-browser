@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Link } from "react-router-dom";
 import Col from 'react-bootstrap/Col'
 
-class Thumbnail extends Component {
-
-  render() {
-    const {image} = this.props;
+function Thumbnail(props) {
+    const {image} = props;
     return (
       <Col className="thumbnailImage">
         <Link to={{
@@ -18,8 +18,16 @@ class Thumbnail extends Component {
         </Link>
       </Col>
     );
-  }
-
 }
+
+Thumbnail.propTypes = {
+  image: PropTypes.shape({
+    id: PropTypes.number,
+    albumId: PropTypes.number,
+    title: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    url: PropTypes.string,
+  }).isRequired
+};
 
 export default Thumbnail;

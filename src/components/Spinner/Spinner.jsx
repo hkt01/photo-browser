@@ -1,38 +1,32 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import "./spinner.css";
 
-/* Spinner component to display data being loaded. */
-class Spinner extends Component {
-  constructor(props) {
-    super(props);
-    this.enableSpinner = this.enableSpinner.bind(this);
+/**
+ * Spinner component to display data being loaded (with hooks).
+ */
+function Spinner() {
+  // Set state
+  const [show, setShow] = useState(false);
 
-    this.state = {
-      show: false,
+  // Set timeout on mounting
+  useEffect(() => {
+    const timer = setTimeout(enableSpinner, 250);
+
+    // Cleanup after unmounting
+    return () => {
+      clearTimeout(timer);
     };
+  });
 
-    // Set a timout for displaying the spinner to avoid "blinking" effect
-    this.timer = setTimeout(this.enableSpinner, 250);
+  function enableSpinner() {
+    setShow(true);
   }
 
-  componentWillUnmount() {
-    clearTimeout(this.timer);
+  if (!show) {
+    return null;
   }
-
-  enableSpinner() {
-    this.setState({show: true});
-  }
-
-  render() {
-    const {show} = this.state;
-
-    if (!show) {
-      return null;
-    }
-
-    return <div className="loader">Loading...</div>;
-  }
+  return <div className="loader">Loading...</div>;
 }
 
 export default Spinner;

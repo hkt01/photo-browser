@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Alert from 'react-bootstrap/Alert';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
@@ -9,7 +9,7 @@ import Pagination from '../components/Pagination/Pagination';
 import Images from '../views/Images';
 import Spinner from '../components/Spinner/Spinner';
 
-/*
+/**
  * Container component for loading images per page.
  * TODO: Calculate pageLimit based on screen width
  */

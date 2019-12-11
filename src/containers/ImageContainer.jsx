@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { useParams } from "react-router-dom";
+
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Alert from 'react-bootstrap/Alert';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 import SingleImage from '../views/SingleImage';
 import Spinner from '../components/Spinner/Spinner';
 
-/*
+/**
  * Container component for loading one image.
  */
-class ImagesContainer extends Component {
+class ImageContainer extends Component {
   constructor() {
     super()
     this.state = {
@@ -67,4 +66,4 @@ class ImagesContainer extends Component {
   }
 }
 
-export default ImagesContainer;
+export default ImageContainer;
