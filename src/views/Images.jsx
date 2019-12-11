@@ -6,7 +6,7 @@ import Thumbnail from '../components/Thumbnail/Thumbnail';
 class Images extends Component {
   render() {
     const { images } = this.props;
-    console.log(images);
+    
     return (
       <Row>
         {images && images.map((image, index) => (
