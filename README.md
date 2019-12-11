@@ -1,6 +1,6 @@
 # photo-browser
 
-Example app of a simple photo browser
+Example app of a simple photo browser.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
