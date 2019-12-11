@@ -1,4 +1,23 @@
+h1 {
+  margin-bottom: 1.5rem !important;
+}
+
+header h1 {
+  margin-left: 15px;
+}
+
+.row {
+  justify-content: center;
+}
+
 .col.thumbnailImage {
   flex-grow: 0 !important;
-  margin: 10px 0;
+  margin: 10px 15px;
+  padding: 0;
+}
+
+.col.thumbnailImage:hover {
+  cursor: pointer;
+  border: 4px solid #535053de;
+  margin: 6px 11px;
 }

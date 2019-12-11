@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import Col from 'react-bootstrap/Col'
 
 class Thumbnail extends Component {
@@ -7,7 +8,14 @@ class Thumbnail extends Component {
     const {image} = this.props;
     return (
       <Col className="thumbnailImage">
-        <img src={image.thumbnailUrl} alt={image.title} />
+        <Link to={{
+          pathname: '/image/'+image.id,
+          state: {
+            image: image
+          }
+        }}>
+          <img src={image.thumbnailUrl} alt={image.title} />
+        </Link>
       </Col>
     );
   }
