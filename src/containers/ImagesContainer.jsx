@@ -58,13 +58,13 @@ class ImagesContainer extends Component {
           <Breadcrumb.Item active>Images</Breadcrumb.Item>
         </Breadcrumb>
 
-        { this.state.totalCount &&
-          <Pagination
+        { this.state.totalCount ?
+          (<Pagination
             totalRecords={this.state.totalCount}
             pageLimit={this.state.pageLimit}
             pageNeighbours={this.state.pageNeighbours}
             onPageChanged={this.setPagination}
-          />
+          />):(null)
         }
 
         { this.state.loading ?
