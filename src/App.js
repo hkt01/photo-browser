@@ -14,16 +14,15 @@ import ImageContainer from './containers/ImageContainer';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/photo-browser'>
       <header>
         <h1>Photo Browser</h1>
       </header>
       <Switch>
-        <Route path="/photo-browser/image/:id" component={ImageContainer} />
-        <Route path="/photo-browser">
+        <Route path="/image/:id" component={ImageContainer} />
+        <Route path="/">
           <ImagesContainer />
         </Route>
-        <Redirect from="/" to="/photo-browser" />
       </Switch>
     </Router>
   );
