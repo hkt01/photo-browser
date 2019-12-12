@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 
 function Thumbnail(props) {
     const {image, location} = props;
-    console.log(location.pathname);
     return (
       <Col className="thumbnailImage">
         <Link to={{

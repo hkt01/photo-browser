@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
@@ -17,13 +18,17 @@ function Breadcrumbs(props) {
 
   return (
     <Breadcrumb>
-      <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href="/photo-browser">Home</Breadcrumb.Item>
       {editedCrums.map((crum, index) => (
-        <Breadcrumb.Item
+        <li
+          className={(index === editedCrums.length-1)?"breadcrumb-item active":"breadcrumb-item"}
           key={index}
-          active={(index === editedCrums.length-1)?true:false}
-          href={crum.path}
-        >{crum.link}</Breadcrumb.Item>
+        >
+        { index === editedCrums.length-1 ?
+          (<span className="active">{crum.link}</span>) :
+          (<Link to={crum.path}>{crum.link}</Link>)
+        }
+        </li>
       ))
 
       }
