@@ -3,10 +3,10 @@ import axios from 'axios';
 
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 import SingleImage from '../views/SingleImage';
 import Spinner from '../components/Spinner/Spinner';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 /**
  * Container component for loading one image.
@@ -49,10 +49,7 @@ class ImageContainer extends Component {
   render() {
     return (
       <Container >
-        <Breadcrumb>
-          <Breadcrumb.Item href="/photo-browser">Images</Breadcrumb.Item>
-          <Breadcrumb.Item active>Single image</Breadcrumb.Item>
-        </Breadcrumb>
+        <Breadcrumbs location={this.props.location} />
 
         { this.state.loading  ?
           (<Spinner />) :

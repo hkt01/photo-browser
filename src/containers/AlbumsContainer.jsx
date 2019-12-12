@@ -5,49 +5,40 @@ import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 
 import Pagination from '../components/Pagination/Pagination';
-import Images from '../views/Images';
+import Albums from '../views/Albums';
 import Spinner from '../components/Spinner/Spinner';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 /**
- * Container component for loading images per page.
- * TODO: Calculate pageLimit based on screen width
+ * Container component for loading albums per page.
  */
-class ImagesContainer extends Component {
+class AlbumsContainer extends Component {
   constructor() {
     super()
     this.state = {
-      images: [],
+      albums: [],
       totalCount: 0,
       currentPage: 1,
-      pageLimit: 24,
+      pageLimit: 21,
       pageNeighbours: 2,
       loading: false,
-      error:null,
-      apiUrl: 'https://jsonplaceholder.typicode.com/photos'
+      error:null
     }
   }
 
   componentDidMount() {
-    // Check if we have album info in props or id in URL parameters
-    const album = (this.props.location.state)?this.props.location.state.album:null;
-    const { id } = this.props.match.params;
-    let apiUrl = this.state.apiUrl;
-
-    if(album || id) { // !Bug in the API, returns all images, not just album images!
-      apiUrl = 'https://jsonplaceholder.typicode.com/albums/'+((album)?album.id:id)+'/photos';
-    }
-    this.setState({loading:true, apiUrl}, function() {
-      this.fetchImages();
+    this.setState({loading:true}, function() {
+      this.fetchAlbums();
     });
+
   }
 
-  fetchImages = () => {
-    axios.get(`${this.state.apiUrl}?_page=${this.state.currentPage}&_limit=${this.state.pageLimit}`)
+  fetchAlbums = () => {
+    axios.get(`https://jsonplaceholder.typicode.com/albums?_page=${this.state.currentPage}&_limit=${this.state.pageLimit}`)
       .then(res => {
-        const images = res.data;
+        const albums = res.data;
         const totalCount = parseInt(res.headers['x-total-count']);
-        this.setState({ images, totalCount, loading: false });
+        this.setState({ albums, totalCount, loading: false });
       })
       .catch(error => {
           console.log(error.response)
@@ -56,13 +47,13 @@ class ImagesContainer extends Component {
   }
 
   setPagination = (page) => {
-    this.setState({ currentPage: page, loading:true }, this.fetchImages);
+    this.setState({ currentPage: page, loading:true }, this.fetchAlbums);
   }
 
   render() {
     return (
       <Container fluid={false}>
-        <Breadcrumbs location={this.props.location}/>
+        <Breadcrumbs location={this.props.location} />
 
         { this.state.totalCount ?
           (<Pagination
@@ -76,7 +67,7 @@ class ImagesContainer extends Component {
         { this.state.loading ?
           (<Spinner />) :
           (!this.state.error ?
-            (<Images {...this.props} images={this.state.images} />) :
+            (<Albums albums={this.state.albums} />) :
             (<Alert variant="danger">{this.state.error}</Alert>)
           )
         }
@@ -85,4 +76,4 @@ class ImagesContainer extends Component {
   }
 }
 
-export default ImagesContainer;
+export default AlbumsContainer;

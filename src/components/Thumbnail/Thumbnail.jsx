@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Link } from "react-router-dom";
-import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col';
 
 function Thumbnail(props) {
-    const {image} = props;
+    const {image, location} = props;
+    console.log(location.pathname);
     return (
       <Col className="thumbnailImage">
         <Link to={{
-          pathname: '/image/'+image.id,
+          pathname: location.pathname+'/'+image.id,
           state: {
             image: image
           }

@@ -2,7 +2,9 @@
 
 Example app of a simple photo browser.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[JSONPlaceholder](http://jsonplaceholder.typicode.com/) REST API used for content.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). See documentation below.
 
 ## Available Scripts
 
