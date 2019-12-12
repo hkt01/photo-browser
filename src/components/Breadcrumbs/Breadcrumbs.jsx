@@ -18,7 +18,7 @@ function Breadcrumbs(props) {
 
   return (
     <Breadcrumb>
-      <Breadcrumb.Item href="/photo-browser">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href={process.env.PUBLIC_URL || '/'}>Home</Breadcrumb.Item>
       {editedCrums.map((crum, index) => (
         <li
           className={(index === editedCrums.length-1)?"breadcrumb-item active":"breadcrumb-item"}

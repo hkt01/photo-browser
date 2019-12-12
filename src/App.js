@@ -15,7 +15,7 @@ import AlbumsContainer from './containers/AlbumsContainer';
 
 function App() {
   return (
-    <Router basename='/photo-browser'>
+    <Router basename={process.env.PUBLIC_URL || '/'}>
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <h1 className="navbar-brand">Photo Browser</h1>

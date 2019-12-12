@@ -4,6 +4,8 @@ Example app of a simple photo browser.
 
 [JSONPlaceholder](http://jsonplaceholder.typicode.com/) REST API used for content.
 
+Deployed to GitHub Pages using [gh-pages](https://github.com/tschaub/gh-pages). Use environment variable PUBLIC_URL to define your projects base URL (project name).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). See documentation below.
 
 ## Available Scripts
@@ -17,6 +19,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### `npm deploy`
+
+Builds the app for production and creates/updates branch 'gh-pages' with the build. Project is now published at the homepage URL defined in package.json.
 
 ### `npm test`
 
