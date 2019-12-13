@@ -1,6 +1,6 @@
 # photo-browser
 
-Example app of a simple photo browser.
+Example app of a simple photo browser. See [Demo](https://hkt01.github.io/photo-browser/).
 
 [JSONPlaceholder](http://jsonplaceholder.typicode.com/) REST API used for content.
 
